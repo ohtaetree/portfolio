@@ -105,9 +105,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 /* Section header row */
 .section-row {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin-bottom: 32px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
 }
 
 .section-title {
@@ -129,8 +130,9 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 .tag-filter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 6px;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .tag-btn {
