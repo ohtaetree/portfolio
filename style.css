@@ -20,13 +20,13 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   --c5:     #f0f0f0;
   --max-w:  1600px;
   --nav-h:  64px;
-  --pad-x:  16px;
+  --pad-x:  26px;
   --sans:   'Inter', 'Pretendard', -apple-system, sans-serif;
   --serif:  'Inter', 'Pretendard', -apple-system, sans-serif;
 }
 
 @media (max-width: 768px) {
-  :root { --pad-x: 12px; }
+  :root { --pad-x: 22px; }
 }
 
 /* ── SCROLLBAR ── */
