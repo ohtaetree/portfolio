@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 
 /* ── RESET ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
 html { -webkit-text-size-adjust: 100%; }
-body { font-family: 'Manrope', sans-serif; background: #fff; color: #000; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+body { font-family: 'Inter', 'Pretendard', -apple-system, sans-serif; background: #fff; color: #000; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; height: auto; }
 button { font-family: inherit; cursor: pointer; background: none; border: none; }
@@ -20,8 +21,8 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   --max-w:  1180px;
   --nav-h:  64px;
   --pad-x:  40px;
-  --sans:   'Manrope', sans-serif;
-  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'Inter', 'Pretendard', -apple-system, sans-serif;
+  --serif:  'Playfair Display', 'Pretendard', Georgia, serif;
 }
 
 @media (max-width: 768px) {
