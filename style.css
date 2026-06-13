@@ -197,26 +197,6 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 .poster-card:hover .card-img-wrap img { transform: scale(1.04); }
 
-/* View label on hover */
-.card-view-label {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: #fff;
-  color: #000;
-  padding: 4px 10px;
-  border: 1px solid var(--c4);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: all 0.25s;
-  z-index: 1;
-}
-
-.poster-card:hover .card-view-label { opacity: 1; transform: translateY(0); }
 
 /* Card text below image */
 .card-body { margin-top: 14px; }
@@ -327,6 +307,8 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 
 @media (max-width: 560px) {
   .detail-stats { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
+  .stat-item:nth-child(odd) { padding-left: 0; }
+  .stat-item:nth-child(even) { border-right: none; }
 }
 
 .stat-item { padding: 0 16px; border-right: 1px solid var(--c4); }
