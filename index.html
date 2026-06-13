@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Work</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">이름</a>
+    <nav class="site-nav">
+      <a class="nav-link active" href="index.html">Work</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-body">
+  <main class="gallery-wrap">
+
+    <div class="section-row">
+      <span class="section-title">Work</span>
+      <span class="section-count" id="visible-count"></span>
+    </div>
+
+    <div class="tag-filter" id="tag-filter">
+      <button class="tag-btn active" data-tag="all">All</button>
+    </div>
+
+    <div class="poster-grid" id="poster-grid"></div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-text">© 2025</span>
+      <span class="footer-text">Poster Works — Spring Semester</span>
+    </div>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+  const grid = document.getElementById('poster-grid');
+  const filterWrap = document.getElementById('tag-filter');
+  const countEl = document.getElementById('visible-count');
+
+  // Collect all unique tags
+  const allTags = [...new Set(posters.flatMap(p => p.tags))].sort();
+  allTags.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'tag-btn';
+    btn.dataset.tag = tag;
+    btn.textContent = tag;
+    filterWrap.appendChild(btn);
+  });
+
+  // Render cards
+  posters.forEach(poster => {
+    const card = document.createElement('div');
+    card.className = 'poster-card';
+    card.dataset.tags = poster.tags.join(',');
+
+    const hasImg = poster.imageUrl;
+    card.innerHTML = `
+      <div class="card-img-wrap">
+        ${hasImg ? `<img src="${poster.imageUrl}" alt="${poster.title}" loading="lazy" />` : ''}
+        <span class="card-view-label">View ↗</span>
+      </div>
+      <div class="card-body">
+        <div class="card-title">${poster.title}</div>
+        <div class="card-tags">
+          ${poster.tags.map(t => `<span class="card-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+    `;
+
+    card.addEventListener('click', () => { location.href = `poster.html?id=${poster.id}`; });
+    grid.appendChild(card);
+  });
+
+  // Filter logic
+  let activeTag = 'all';
+
+  function updateCount() {
+    const visible = grid.querySelectorAll('.poster-card:not(.hidden)').length;
+    countEl.textContent = `${visible} works`;
+  }
+
+  filterWrap.addEventListener('click', e => {
+    const btn = e.target.closest('.tag-btn');
+    if (!btn) return;
+
+    activeTag = btn.dataset.tag;
+    filterWrap.querySelectorAll('.tag-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+    grid.querySelectorAll('.poster-card').forEach(card => {
+      const tags = card.dataset.tags.split(',');
+      const show = activeTag === 'all' || tags.includes(activeTag);
+      card.classList.toggle('hidden', !show);
+    });
+
+    updateCount();
+  });
+
+  updateCount();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poster — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">이름</a>
+    <nav class="site-nav">
+      <a class="nav-link active" href="index.html">Work</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-body">
+  <main id="main-content"></main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-text">© 2025</span>
+      <span class="footer-text">Poster Works — Spring Semester</span>
+    </div>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+  const params  = new URLSearchParams(location.search);
+  const id      = Number(params.get('id'));
+  const poster  = posters.find(p => p.id === id);
+  const main    = document.getElementById('main-content');
+
+  if (!poster) {
+    main.innerHTML = `<div class="not-found">Poster not found.</div>`;
+  } else {
+    document.title = `${poster.title} — Portfolio`;
+
+    const hasImg   = poster.imageUrl;
+    const hasStory = poster.story && poster.story.trim();
+    const hasTags  = poster.tags && poster.tags.length;
+
+    main.innerHTML = `
+      <div class="detail-wrap">
+        <a class="back-link" href="index.html">← Back to Work</a>
+
+        <div class="detail-grid">
+
+          <!-- LEFT: poster image -->
+          <div class="detail-img-col">
+            <div class="detail-poster">
+              ${hasImg ? `<img src="${poster.imageUrl}" alt="${poster.title}" />` : ''}
+            </div>
+          </div>
+
+          <!-- RIGHT: info -->
+          <div class="detail-info">
+
+            <!-- Stats -->
+            <div class="detail-stats">
+              <div class="stat-item">
+                <div class="stat-label">Creator</div>
+                <div class="stat-value">${poster.creator}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Year</div>
+                <div class="stat-value">${poster.year}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Category</div>
+                <div class="stat-value">${poster.category}</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-label">Medium</div>
+                <div class="stat-value">${poster.medium}</div>
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h1 class="detail-title">${poster.title}</h1>
+
+            <!-- Description -->
+            ${poster.description ? `
+            <div class="detail-label">Description</div>
+            <p class="detail-desc">${poster.description}</p>
+            ` : ''}
+
+            <!-- Story -->
+            ${hasStory ? `
+            <div class="detail-label">Story</div>
+            <p class="detail-story">${poster.story}</p>
+            ` : ''}
+
+            <!-- Tags -->
+            ${hasTags ? `
+            <div class="detail-tags">
+              ${poster.tags.map(t => `<span class="detail-tag">${t}</span>`).join('')}
+            </div>
+            ` : ''}
+
+            <p style="font-size:0.65rem;color:var(--c2);margin-top:20px;letter-spacing:0.04em;">${poster.dimensions}</p>
+
+          </div>
+        </div>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
