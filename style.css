@@ -18,15 +18,15 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   --c3:     #ccc;
   --c4:     #e3e3e3;
   --c5:     #f0f0f0;
-  --max-w:  1180px;
+  --max-w:  1600px;
   --nav-h:  64px;
-  --pad-x:  40px;
+  --pad-x:  16px;
   --sans:   'Inter', 'Pretendard', -apple-system, sans-serif;
   --serif:  'Inter', 'Pretendard', -apple-system, sans-serif;
 }
 
 @media (max-width: 768px) {
-  :root { --pad-x: 20px; }
+  :root { --pad-x: 12px; }
 }
 
 /* ── SCROLLBAR ── */
