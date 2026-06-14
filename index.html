@@ -51,12 +51,8 @@
   const filterWrap = document.getElementById('tag-filter');
   const countEl = document.getElementById('visible-count');
 
-  // Fixed category list
-  const allTags = [
-    'Book', 'Branding', 'Campaign', 'Editorial', 'Exhibition',
-    'Motion Graphic', 'Package', 'Poster', 'Product',
-    'Self-Initiated Project', 'Typography'
-  ];
+  // Collect tags present in data
+  const allTags = [...new Set(posters.flatMap(p => p.tags))].sort();
   allTags.forEach(tag => {
     const btn = document.createElement('button');
     btn.className = 'tag-btn';
