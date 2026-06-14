@@ -341,10 +341,10 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
 }
 
 .about-name {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 .about-bio {
