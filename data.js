@@ -37,6 +37,18 @@ const posters = [
   },
   {
     id: 4,
+    title: "타이포그래피",
+    creator: "Taemok Oh",
+    year: "2026",
+    medium: "디지털 프린트",
+    dimensions: "297 × 420mm",
+    description: "",
+    story: "",
+    tags: ["Poster"],
+    imageUrl: "images/Poster 03-그디_WK5_타이포그래피.png",
+  },
+  {
+    id: 5,
     title: "파괴와 재구성",
     creator: "Taemok Oh",
     year: "2026",
@@ -48,7 +60,7 @@ const posters = [
     imageUrl: "images/Poster 04_그디_WK6_파괴와 재구성.png",
   },
   {
-    id: 5,
+    id: 6,
     title: "Beste Plakate",
     creator: "Taemok Oh",
     year: "2026",
@@ -60,7 +72,7 @@ const posters = [
     imageUrl: "images/Poster 05_그디_WK8_Beste Plakate.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Plant",
     creator: "Taemok Oh",
     year: "2026",
@@ -72,7 +84,7 @@ const posters = [
     imageUrl: "images/Poster 06_그디_WK9_Plant.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "道路工事",
     creator: "Taemok Oh",
     year: "2026",
@@ -84,7 +96,7 @@ const posters = [
     imageUrl: "images/Poster 07_그디_WK10_道路工事.png",
   },
   {
-    id: 8,
+    id: 9,
     title: "Post Malone",
     creator: "Taemok Oh",
     year: "2026",
@@ -96,7 +108,7 @@ const posters = [
     imageUrl: "images/Poster 08_그디_WK10_Post Malone.png",
   },
   {
-    id: 9,
+    id: 10,
     title: "サムライハート",
     creator: "Taemok Oh",
     year: "2026",
@@ -108,7 +120,7 @@ const posters = [
     imageUrl: "images/Poster 09_그디_WK11_サムライハート.png",
   },
   {
-    id: 10,
+    id: 11,
     title: "익숙한 낯섬",
     creator: "Taemok Oh",
     year: "2026",
@@ -120,7 +132,7 @@ const posters = [
     imageUrl: "images/Poster 10_그디_WK12_익숙한 낯섬.png",
   },
   {
-    id: 11,
+    id: 12,
     title: "Solitude",
     creator: "Taemok Oh",
     year: "2026",
@@ -132,7 +144,7 @@ const posters = [
     imageUrl: "images/Poster 11_그디_WK13_Solitude.png",
   },
   {
-    id: 12,
+    id: 13,
     title: "Vinyl Club",
     creator: "Taemok Oh",
     year: "2026",
@@ -142,18 +154,6 @@ const posters = [
     story: "",
     tags: ["Poster"],
     imageUrl: "images/Poster 12_그디_WK13_Vinyl Club.png",
-  },
-  {
-    id: 13,
-    title: "타이포그래피",
-    creator: "Taemok Oh",
-    year: "2026",
-    medium: "디지털 프린트",
-    dimensions: "297 × 420mm",
-    description: "",
-    story: "",
-    tags: ["Poster"],
-    imageUrl: "images/Poster 03-그디_WK5_타이포그래피.png",
   },
   {
     id: 14,
