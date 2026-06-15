@@ -46,10 +46,12 @@
   } else {
     document.title = `${poster.title} — Portfolio`;
 
-    const hasImg   = poster.imageUrl;
-    const hasDesc  = poster.description && poster.description.trim();
-    const hasStory = poster.story && poster.story.trim();
-    const hasTags  = poster.tags && poster.tags.length;
+    const hasImg     = poster.imageUrl;
+    const hasDesc    = poster.description && poster.description.trim();
+    const hasStory   = poster.story && poster.story.trim();
+    const hasTags    = poster.tags && poster.tags.length;
+    const hasConcept = poster.concept && poster.concept.trim();
+    const hasTool    = poster.tool && poster.tool.trim();
 
     main.innerHTML = `
       <div class="detail-wrap">
@@ -76,10 +78,15 @@
           </div>
         </div>` : ''}
 
-        ${hasDesc || hasStory ? `
+        ${hasDesc || hasStory || hasConcept || hasTool ? `
         <div class="detail-body">
           ${hasDesc ? `<p class="detail-desc">${poster.description}</p>` : ''}
           ${hasStory ? `<p class="detail-story">${poster.story}</p>` : ''}
+          ${hasConcept || hasTool ? `
+          <div class="detail-info">
+            ${hasConcept ? `<div class="detail-info-row"><span class="detail-info-label">Concept</span><span class="detail-info-value">${poster.concept}</span></div>` : ''}
+            ${hasTool ? `<div class="detail-info-row"><span class="detail-info-label">Tool</span><span class="detail-info-value">${poster.tool}</span></div>` : ''}
+          </div>` : ''}
         </div>` : ''}
       </div>
     `;

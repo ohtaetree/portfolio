@@ -325,6 +325,27 @@ button { font-family: inherit; cursor: pointer; background: none; border: none; 
   padding-left: 20px;
 }
 
+.detail-info {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-info-row {
+  display: flex;
+  gap: 20px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--c2);
+  letter-spacing: 0.02em;
+}
+
+.detail-info-label {
+  min-width: 60px;
+  flex-shrink: 0;
+}
+
 /* ============================================================
    ABOUT & CONTACT PAGES
    ============================================================ */
